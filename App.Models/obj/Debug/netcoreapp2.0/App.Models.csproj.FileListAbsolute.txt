@@ -1,0 +1,11 @@
+C:\Projekti\Kneat\App\App.Models\bin\Debug\netcoreapp2.0\App.Models.deps.json
+C:\Projekti\Kneat\App\App.Models\bin\Debug\netcoreapp2.0\App.Models.dll
+C:\Projekti\Kneat\App\App.Models\bin\Debug\netcoreapp2.0\App.Models.pdb
+C:\Projekti\Kneat\App\App.Models\bin\Debug\netcoreapp2.0\App.Shared.dll
+C:\Projekti\Kneat\App\App.Models\bin\Debug\netcoreapp2.0\App.Shared.pdb
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.csprojResolveAssemblyReference.cache
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.csproj.CoreCompileInputs.cache
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.AssemblyInfoInputs.cache
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.AssemblyInfo.cs
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.dll
+C:\Projekti\Kneat\App\App.Models\obj\Debug\netcoreapp2.0\App.Models.pdb

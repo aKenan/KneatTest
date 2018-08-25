@@ -1,0 +1,5 @@
+C:\Projekti\Kneat\App\Services\bin\Debug\netcoreapp2.0\App.Models.dll
+C:\Projekti\Kneat\App\Services\obj\Debug\netcoreapp2.0\Services.csprojResolveAssemblyReference.cache
+C:\Projekti\Kneat\App\Services\obj\Debug\netcoreapp2.0\Services.csproj.CoreCompileInputs.cache
+C:\Projekti\Kneat\App\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfoInputs.cache
+C:\Projekti\Kneat\App\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs
