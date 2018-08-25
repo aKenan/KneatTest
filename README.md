@@ -28,5 +28,5 @@ It contains 5 projects:
 For any questions please contact me: kenan.alihodzich@gmail.com
 
 
-Enyoj
+Enjoy
 
