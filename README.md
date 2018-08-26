@@ -9,13 +9,13 @@ Visual studio 2017 Version 15.3.5
 
 3. APP  description
 
-This application get all starships from https://swapi.co/api/ and calculates how many stops are required for each ship for number of MGLT as input
-It contains 5 projects:
+This application get all starships from https://swapi.co/api/ and calculates how many stops are required for each ship for number of MGLT as input.
+The solution contains 5 projects:
 
 - APP - Console application
 - APP.Models - Model class library
 - APP.Services - Services library
-- APP.Shared - Shared object and function such Enums and Helper methods
+- APP.Shared - Shared object and function such are enums and Helper methods
 - APP.Test - Unit tests
 
 4. Run app

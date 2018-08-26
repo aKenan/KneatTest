@@ -12,21 +12,27 @@ namespace App
         static IServiceProvider diProvider;
         static void Main(string[] args)
         {            
-            Config();
+            Config(); //configurate .net CORE
+
+            //basic data
+            Console.Title = "StarWars";            
+            Console.WriteLine("Welcome");
+            Console.WriteLine("This application calculates number of required stops for each starship in starwars for inserted number of megalights.");
 
             int mgltInt = int.MinValue;
 
             Console.WriteLine("Enter number of megalights(MGLT) or enter 'q' to quit: ");
-            var mgltInput =  Console.ReadLine();
+            var mgltInput =  Console.ReadLine();//input value
 
             while(mgltInput.Trim().ToLower() != "q")
             {
-                if (!int.TryParse(mgltInput, out mgltInt))
+                //validations
+                if (!int.TryParse(mgltInput, out mgltInt)) //check if input is integer number
                 {
                     Console.WriteLine("Incorrect input, MGLT must be number! Try again or enter 'q' to quit: ");
                     mgltInput = Console.ReadLine();
                 }
-                else if (mgltInt < 0)
+                else if (mgltInt < 0)//check if number is greather than 0
                 {
                     Console.WriteLine("MGLT must be greather than 0! Try again or enter 'q' to quit: ");
                     mgltInput = Console.ReadLine();
@@ -36,29 +42,29 @@ namespace App
                     Console.WriteLine("Please wait...");
                     try
                     {
-                        var calculations = diProvider.GetRequiredService<Worker>().CalculateNumberOfStopsForEachStarship(mgltInt).Result;
+                        var calculations = diProvider.GetRequiredService<Worker>().CalculateNumberOfStopsForEachStarship(mgltInt).Result; //calculate
 
                         Console.WriteLine("-------------------------------------------------------");
 
-                        foreach (var calc in calculations)
+                        foreach (var calc in calculations) // write all records
                         {
-                            Console.WriteLine(calc);
+                            Console.WriteLine($"{calc.Item1}: {calc.Item2}"); 
                         }
 
                         Console.WriteLine("-------------------------------------------------------");
-                        Console.WriteLine("PRESS ANY KEY TO EXIT");
+                        
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
-
+                        Console.WriteLine(ex.Message); //error has occured
                     }
                     finally
                     {
+                        Console.WriteLine("PRESS ANY KEY TO EXIT");
                         Console.ReadLine();
                     }
 
-                    return;
+                    return;//end
                 }
             }
         }

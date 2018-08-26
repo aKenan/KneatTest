@@ -36,27 +36,27 @@ namespace Services
             var apiModel = new GetAllStarshipsModel();
             try
             {
-                while(returnModel.Count < apiModel.Count || apiModel.Count == 0)
+                while(returnModel.Count < apiModel.Count || apiModel.Count == 0) //if first itteration or return model is not full
                 {
-                    var url = string.IsNullOrEmpty(apiModel.Next) ? string.Concat(_apiUrl, getAllStarshipsURL) : apiModel.Next;
-                    var data = _helper.GetJsonString(url).Result;
+                    var url = string.IsNullOrEmpty(apiModel.Next) ? string.Concat(_apiUrl, getAllStarshipsURL) : apiModel.Next; //basic address or next page address
+                    var data = _helper.GetJsonString(url).Result; //http response message
 
                     if (data.IsSuccessStatusCode)
                     {
-                        var json = await data.Content.ReadAsStringAsync();
-                        apiModel = JsonConvert.DeserializeObject<GetAllStarshipsModel>(json);
+                        var json = await data.Content.ReadAsStringAsync();//convert response to json string
+                        apiModel = JsonConvert.DeserializeObject<GetAllStarshipsModel>(json); //map json string to model
 
                         if (apiModel.Count == 0)
                             break;
 
-                        returnModel.AddRange(apiModel.Starships);
+                        returnModel.AddRange(apiModel.Starships); //add starships to return model
 
-                        if (string.IsNullOrEmpty(apiModel.Next))
+                        if (string.IsNullOrEmpty(apiModel.Next)) //if last page break while loop
                             break;
                     }
                     else
                     {
-                        throw new Exception(_helper.GetApiUnsuccessfullMessage(data));
+                        throw new Exception(_helper.GetApiUnsuccessfullMessage(data)); //if error, throw exception
                     }
                 }
             }

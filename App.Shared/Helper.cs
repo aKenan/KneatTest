@@ -7,11 +7,6 @@ namespace App.Shared
 {
     public static class Helper
     {
-        const int yearInHours = 8760; //24*356
-        const int monthInHours = 720;//24*30
-        const int weekInHours = 168; //24*7
-        const int dayInHours = 24;
-
         /// <summary>
         /// Calculates time value to hours
         /// </summary>
@@ -23,13 +18,13 @@ namespace App.Shared
             switch (timeType)
             {
                 case TimeEnum.YEAR:
-                    return value * yearInHours;
+                    return value * (int)TimeInHours.YEAR;
                 case TimeEnum.MONTH:
-                    return value * monthInHours;
+                    return value * (int)TimeInHours.MONTH;
                 case TimeEnum.WEEK:
-                    return value * weekInHours;
+                    return value * (int)TimeInHours.WEEK;
                 case TimeEnum.DAY:
-                    return value * dayInHours;
+                    return value * (int)TimeInHours.DAY;
                 case TimeEnum.HOUR:
                     return value;
                 default:
@@ -46,13 +41,13 @@ namespace App.Shared
         public static string GetErrorMessage(Exception ex, bool includeStackTrace = true)
         {
             var message = string.Empty;
-            if(ex.InnerException != null)
+            if(ex.InnerException != null) // inner exception EXISTS
             {
                 message = $"Error message: ${ex.InnerException.Message}";
                 if (includeStackTrace)
                     message += $"STACK TRACE: {ex.InnerException.StackTrace}";
-            }
-            else
+            } 
+            else //inner exception DOES NOT exists
             {
                 message = $"Error message: ${ex.Message}";
                 if (includeStackTrace)
@@ -70,9 +65,9 @@ namespace App.Shared
         /// <returns></returns>
         public static int CalculateNumberOfStops(int starshipMglt, int consumablesValueHours, int mglt)
         {
-            double formulaValue = (double)mglt / (double)(consumablesValueHours * starshipMglt);
+            double formulaValue = (double)mglt / (double)(consumablesValueHours * starshipMglt); //formula: inputMGLT / consumable value in hours * starshipMGLT
 
-            return Convert.ToInt32(Math.Floor(formulaValue));
+            return Convert.ToInt32(Math.Floor(formulaValue)); // round to lower value
         }
     }
 }

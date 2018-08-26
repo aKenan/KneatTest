@@ -6,3 +6,4 @@ C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.AssemblyInfo
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.AssemblyInfo.cs
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.dll
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.pdb
+C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.csprojResolveAssemblyReference.cache

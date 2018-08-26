@@ -20,7 +20,7 @@ namespace App.Services.Helpers
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var data = await client.GetAsync(url);
+                var data = await client.GetAsync(url); //invoke HTTP GET
 
                 return data;
             }

@@ -24,20 +24,24 @@ namespace App
         }
 
         /// <summary>
-        /// Calculates number of stops for number of megalights for each starship in StarWars
+        /// Calculates number of stops for number of megalights for each starship in StarWars, returns list of string
         /// </summary>
         /// <param name="mglt"></param>
-        public async Task<List<string>> CalculateNumberOfStopsForEachStarship(int mglt)
+        public async Task<List<Tuple<string , string>>> CalculateNumberOfStopsForEachStarship(int mglt)
         {
+            #region log
             _logger.LogInformation($"Invoked CalculateNumberOfStopsForEachStarship, mglt: {mglt}");
-            List<string> calculated = new List<string>();
+            #endregion
+            List<Tuple<string , string>> retList = new List<Tuple<string, string>>();
 
             try
             {
-                var starships = await _starshipService.GetAllStarships();
-                _logger.LogInformation($"{starships.Count} number of starship found, beggining calculation");
+                var starships = await _starshipService.GetAllStarships();//get all starships
+                #region log
+                _logger.LogInformation($"{starships.Count} number of starship found, beggining calculation"); 
+                #endregion
 
-                var starshipsDetailed = starships.ToListStarshipDetailedModel();
+                var starshipsDetailed = starships.ToListStarshipDetailedModel();//map to detailed model
 
                 foreach(var starshipDetailed in starshipsDetailed)
                 {
@@ -45,17 +49,21 @@ namespace App
                         "UNKNOWN" :
                         CalculateNumberOfStops(Convert.ToInt32(starshipDetailed.MGLT), starshipDetailed.ConsumablesValueInHours.Value, mglt).ToString();
 
-                    calculated.Add($"{starshipDetailed.Name} : {numberOfStops}");
+                    retList.Add(new Tuple<string, string>(starshipDetailed.Name, numberOfStops));//add to return list
                 }
-                _logger.LogInformation($"Successfully calculated!");
+                #region log
+                _logger.LogInformation($"Successfully calculated!"); 
+                #endregion
             }
             catch (Exception ex)
             {
-                _logger.LogError(GetErrorMessage(ex));
+                #region log
+                _logger.LogError(GetErrorMessage(ex)); 
+                #endregion
                 throw ex;                
             }
 
-            return calculated;
+            return retList;
         }
     }
 }
