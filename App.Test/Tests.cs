@@ -6,6 +6,7 @@ using System.Text;
 using Xunit;
 using Services;
 using App.Models.StarshipModels;
+using static App.Shared.Helper;
 
 namespace App.Test
 {
@@ -72,6 +73,12 @@ namespace App.Test
             {
                 throw ex;
             }
+        }
+
+        [Fact]
+        public void CalculateNumberOfStopsCheck()
+        {
+            Assert.Equal(CalculateNumberOfStops(75, 1440, 1000000), 9);
         }
 
         #region config

@@ -24,10 +24,10 @@ namespace App.Services.Helpers
 
                 return data;
             }
-        }   
-        
+        }
+
         /// <summary>
-        /// Get error message from exception
+        /// Get error message from HttpResponseMessage
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>

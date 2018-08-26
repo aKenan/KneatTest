@@ -41,7 +41,9 @@ namespace App
 
                 foreach(var starshipDetailed in starshipsDetailed)
                 {
-                    string numberOfStops = string.IsNullOrEmpty(starshipDetailed.MGLT) || string.Equals(starshipDetailed.MGLT, "unknown") ? "UNKNOWN" : CalculateNumberOfStops(starshipDetailed, mglt).ToString();
+                    string numberOfStops = string.IsNullOrEmpty(starshipDetailed.MGLT) || string.Equals(starshipDetailed.MGLT, "unknown") ?
+                        "UNKNOWN" :
+                        CalculateNumberOfStops(Convert.ToInt32(starshipDetailed.MGLT), starshipDetailed.ConsumablesValueInHours.Value, mglt).ToString();
 
                     calculated.Add($"{starshipDetailed.Name} : {numberOfStops}");
                 }
@@ -54,22 +56,6 @@ namespace App
             }
 
             return calculated;
-        }
-
-        /// <summary>
-        /// Calculates number of stops for single starship
-        /// </summary>
-        /// <param name="starship"></param>
-        /// <param name="mglt"></param>
-        /// <returns></returns>
-        private int CalculateNumberOfStops(StarshipDetailedModel starship, int mglt)
-        {
-            int starshipMegalights = 0;
-            int.TryParse(starship.MGLT, out starshipMegalights);
-
-            double formulaValue = (double)mglt / (double)(starship.ConsumablesValueInHours.Value * starshipMegalights);
-
-            return Convert.ToInt32(Math.Floor(formulaValue));
         }
     }
 }

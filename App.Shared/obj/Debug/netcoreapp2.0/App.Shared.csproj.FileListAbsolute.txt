@@ -1,7 +1,6 @@
 C:\Projekti\Kneat\App\App.Shared\bin\Debug\netcoreapp2.0\App.Shared.deps.json
 C:\Projekti\Kneat\App\App.Shared\bin\Debug\netcoreapp2.0\App.Shared.dll
 C:\Projekti\Kneat\App\App.Shared\bin\Debug\netcoreapp2.0\App.Shared.pdb
-C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.csprojResolveAssemblyReference.cache
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.csproj.CoreCompileInputs.cache
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.AssemblyInfoInputs.cache
 C:\Projekti\Kneat\App\App.Shared\obj\Debug\netcoreapp2.0\App.Shared.AssemblyInfo.cs
