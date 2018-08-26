@@ -24,6 +24,11 @@ It contains 5 projects:
 - Enter number of megalights(MGLT)
 - Wait for the results
 
+5. Run tests
+
+- Open Test Explorer (Test -> Windows -> Test Explorer) in Visual studio
+- Click "Run All" to run all tests
+
 
 For any questions please contact me: kenan.alihodzich@gmail.com
 
